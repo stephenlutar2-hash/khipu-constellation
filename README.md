@@ -17,18 +17,18 @@ license: apache-2.0
 
 # Khipu Constellation
 
-A frontier 3D star field where **every Khipu receipt across the six SZL flagships is a star**.
+A frontier 3D star field where **every Khipu receipt across the six SZL capability surfaces is a star**.
 
 - **Position** = `hash(receiptId)` mapped to a deterministic 3D spherical shell (reproducible across reloads).
-- **Color** = flagship (a11oy / amaru / sentra / rosie / vessels / killinchu, Kanchay palette).
+- **Color** = capability surface (command / memory / policy / operator console / vessels / drones, Kanchay palette).
 - **Brightness + size** = Yuyay score of the receipt.
 - **Arcs** connect chained receipts (`prev → cur`) — the cords of the receipt DAG.
-- **Live data**: polls the real `/v1/ledger` endpoint of each flagship every **5 s**
-  (`https://szlholdings-<flagship>.hf.space/api/<flagship>/v1/ledger`).
+- **Live data**: polls the real `/v1/ledger` endpoint of each surface every **5 s**
+  (`https://szlholdings-<surface>.hf.space/api/<surface>/v1/ledger`).
 - **Honest fallback**: if an endpoint is unreachable the star field runs in clearly-labelled
   **DEMO MODE** with deterministic synthetic receipts, and auto-promotes to **LIVE** the moment any
   real endpoint answers (`LIVE · n/6`).
-- **Filters**: flagship toggles, Yuyay-score floor, time window.
+- **Filters**: surface toggles, Yuyay-score floor, time window.
 
 **Tech**: React Three Fiber stack / Three.js **r171**, **WebGPURenderer** baseline with **WebGL2 fallback**
 (badge in the HUD shows the active backend), GPU `InstancedMesh` for up to 20k stars, Kanchay design tokens.
